@@ -9,6 +9,20 @@ jobs:
     build:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v2
+            - name: Checkout repo
+              uses: actions/checkout@v2
+
+            - name: List and read files
+              run: |
+               echo "Reading files"
+               ls -ltra
+               cat README.md
+            
+            - name: Install cowsay program
+              run: sudo apt-get install cowsay -y
+
+            - name: Generate ASCII Character
+              run: cowsay -f dragon "Run for cover, iam a dragon." >> dragon.txt
+
             - name: runs on one line script
               run: echo "hello world"
