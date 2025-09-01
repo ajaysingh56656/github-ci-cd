@@ -23,6 +23,9 @@ jobs:
 
             - name: Generate ASCII Character
               run: cowsay -f dragon "Run for cover, iam a dragon." >> dragon.txt
+            
+            - name: Show Dragon
+              run: cat dragon.txt
 
             - name: runs on one line script
               run: echo "hello world"
